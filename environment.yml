@@ -1,0 +1,6 @@
+name: llm_task
+dependencies:
+  - openai
+  - langchain
+  - streamlit_ace
+  - streamlit
