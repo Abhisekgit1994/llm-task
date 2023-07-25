@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 from streamlit_ace import st_ace
 from utils import LLMFunctions
-from code_editor import code_editor
 
 llm = LLMFunctions()
 
