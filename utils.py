@@ -1,20 +1,17 @@
 import openai
 import os
 import re
-import streamlit as st
 import pandas as pd
 from langchain.prompts import ChatPromptTemplate
 from langchain.output_parsers import ResponseSchema
 from langchain.output_parsers import StructuredOutputParser
 from langchain.chat_models import ChatOpenAI
 from langchain.llms import OpenAI
-import configparser
 os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 
 
 class LLMFunctions:
     def __init__(self):
-        # openai.api_key = "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"
         self.reference_schema = ResponseSchema(name="Reference_table_column", description="reference table column name")
         self.similar_col_schema = ResponseSchema(name="Candidate_table_similar_columns",
                                    description="for the column in reference table \
@@ -50,10 +47,9 @@ class LLMFunctions:
         self.code_prompt = """\
                             For the following Reference list and Candidate list, perform tasks as instructed:
                             Instruction:
-                            python_script: python script to transform data in candidate list \
-                            to reference list items format
                             
-                            transformed_values: apply the script to the candidate_list and replace the transformed_values in the response
+                            python_script: python script to transform data in candidate list to reference list items format
+                            transformed_values: apply the script to the candidate_list and return the transformed values in a list
                             
                             Reference list: {reference_list}
                             Candidate list: {candidate_list}
