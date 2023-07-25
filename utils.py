@@ -8,7 +8,7 @@ from langchain.output_parsers import ResponseSchema
 from langchain.output_parsers import StructuredOutputParser
 from langchain.chat_models import ChatOpenAI
 from langchain.llms import OpenAI
-os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
+# os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 
 
 class LLMFunctions:

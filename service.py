@@ -31,12 +31,14 @@ def main():
     if template and candidate:
         for col in template_df.columns:
             failure_list[col] = {}
+            st.session_state.python_script[col] = {}
+            st.session_state.transformed_values[col] = {}
             sub1, sub2, sub3 = col2.columns([1, 1.8, 1], gap="small")
             output, response, prompt = llm.find_similar_columns(reference_table=template_df.head(), candidate_table=candidate_df.head(), col=col)
             track_output_prompt.append({'prompt': prompt, 'completion': response})
             output_list.append(output)
             with col1:
-                st.text(f'Similar columns for {col}')
+                st.markdown(f'Similar columns for {col}')
                 st.markdown(output['Candidate_table_similar_columns'])
                 with st.expander("See Reason"):
                     st.markdown(output['Reason'])
