@@ -1,0 +1,6 @@
+,Reference_table_column,Candidate_table_similar_columns,Reason
+0,Date,"['Date_of_Policy', 'Policy_Start']","The columns 'Date_of_Policy' and 'Policy_Start' in the candidate table have similar values to the 'Date' column in the reference table. They all represent dates related to policies, such as the date the policy was created or the start date of the policy."
+1,EmployeeName,"['FullName', 'Full_Name']",The columns 'FullName' and 'Full_Name' in the candidate table have similar values as the 'EmployeeName' column in the reference table. They represent the full names of the employees.
+2,Plan,"['Insurance_Plan', 'Insurance_Type']","The columns 'Insurance_Plan' and 'Insurance_Type' in the candidate table have similar values as the 'Plan' column in the reference table. They represent the same concept of different insurance plans (Gold, Silver, Bronze)."
+3,PolicyNumber,"['Policy_No', 'Policy_Num']",The columns 'Policy_No' and 'Policy_Num' in the candidate table have similar values to the 'PolicyNumber' column in the reference table. They both represent the policy numbers of the insurance plans.
+4,Premium,"['Monthly_Premium', 'Monthly_Cost']",The columns 'Monthly_Premium' and 'Monthly_Cost' in the candidate table have the same type of values as the 'Premium' column in the reference table. They represent the monthly premium cost for the insurance plans.
