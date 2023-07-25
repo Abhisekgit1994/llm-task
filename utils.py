@@ -8,11 +8,14 @@ from langchain.output_parsers import ResponseSchema
 from langchain.output_parsers import StructuredOutputParser
 from langchain.chat_models import ChatOpenAI
 from langchain.llms import OpenAI
+import configparser
 
 
 class LLMFunctions:
     def __init__(self):
-        openai.api_key = "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"
+        config = configparser.ConfigParser()
+        config.read('secrets.ini')
+        openai.api_key = config['openai']['api_key']
         self.reference_schema = ResponseSchema(name="Reference_table_column", description="reference table column name")
         self.similar_col_schema = ResponseSchema(name="Candidate_table_similar_columns",
                                    description="for the column in reference table \
