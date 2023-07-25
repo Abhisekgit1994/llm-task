@@ -1,17 +1,19 @@
 import openai
 import os
 import re
+import streamlit as st
 import pandas as pd
 from langchain.prompts import ChatPromptTemplate
 from langchain.output_parsers import ResponseSchema
 from langchain.output_parsers import StructuredOutputParser
 from langchain.chat_models import ChatOpenAI
 from langchain.llms import OpenAI
+openai_api_key = st.secrets["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"]
 
 
 class LLMFunctions:
     def __init__(self):
-        openai.api_key = "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"
+        openai.api_key = openai_api_key
         self.reference_schema = ResponseSchema(name="Reference_table_column", description="reference table column name")
         self.similar_col_schema = ResponseSchema(name="Candidate_table_similar_columns",
                                    description="for the column in reference table \
